@@ -9,3 +9,5 @@ class SpringBeanRegistrationApplication
 fun main(args: Array<String>) {
     runApplication<SpringBeanRegistrationApplication>(*args)
 }
+
+

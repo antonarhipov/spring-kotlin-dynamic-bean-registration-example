@@ -11,12 +11,16 @@ class MessageServiceRegistrar : BeanRegistrar {
     ) {
         val property = env.getProperty("app.message-type", "email")
         when (property.lowercase()) {
-            "email" -> registry.registerBean("emailService", EmailMessageService::class.java) {
+            "email" ->
+                registry.registerBean("emailService", EmailMessageService::class.java) {
                 it.description("Email message service registered via the BeanRegistrar")
             }
+
             "sms" -> registry.registerBean("smsService", SmsMessageService::class.java) {
                 it.description("SMS message service registered via the BeanRegistrar")
             }
         }
     }
 }
+
+//class MessageServiceRegistrar :
